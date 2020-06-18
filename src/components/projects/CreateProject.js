@@ -8,20 +8,20 @@ export default function CreateProject(props) {
 
   const {dispatch} = useContext(Context);
 
-  const [state, setState] = useState({
+  const [project, setProject] = useState({
     title: "",
     content: ""
   })
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(createProject(state));
+    dispatch(createProject(project));
   }
 
   function handleChange(e) {
     const property = e.target.id;
     const value = e.target.value;
-    setState(prev => {
+    setProject(prev => {
       return(
         {...prev, [property]: value}
       )

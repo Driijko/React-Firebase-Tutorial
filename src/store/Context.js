@@ -16,9 +16,8 @@ function ContextProvider(props) {
     switch(action.type) {
 
       case "PROJECT_ACTION" :
-        return {
-          test: <div>Bye Bye</div>
-        }
+        const newProjects = projectReducer(state, {type: action.subType, project: action.project});
+        return ({...state, projects: newProjects});
 
       default:
         throw new Error();
