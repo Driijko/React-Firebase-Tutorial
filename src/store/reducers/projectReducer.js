@@ -4,10 +4,10 @@ export const projects = [
   {id: "3", title: "egg hunt with yoshi", content: "blah blah blah"}
 ];
 
-export function projectReducer(state = projects, action) {
+export default function projectReducer(state = projects, action) {
   switch(action.type) {
 
-    case "ADD_PROJECT":
+    case "CREATE_PROJECT":
       const {project} = action;
       project.id = `${Math.floor(Math.random() * 100000)}`;
       // console.log([...state.projects, project]);
@@ -15,6 +15,9 @@ export function projectReducer(state = projects, action) {
         ...state.projects,
         project
       ]
+
+    default:
+      throw new Error();
   }
 }
 

@@ -1,7 +1,7 @@
 export function createProject(project) {
   return {
     type: "PROJECT_ACTION",
-    subType: "ADD_PROJECT",
+    subType: "CREATE_PROJECT",
     project: project
   }
 }
